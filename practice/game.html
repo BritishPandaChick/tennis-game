@@ -1,7 +1,34 @@
 <html>
-    Sarah was here! <b>This text is thick</b> and <i>This text is slanted</i> and this text is normal.
-    New text added here!
-    <script>
-        console.log("Hello world!");
-    </script>
+Some text here 
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+    
+<script>
+    var canvas;
+    var canvasContext;
+    var ballX = 50;
+
+    window.onload = function() {
+        console.log("hello world");
+        canvas = document.getElementById('gameCanvas');
+        canvasContext = canvas.getContext('2d');
+
+        setInterval(drawEverything, 1000)
+        drawEverything();
+        drawEverything();
+        drawEverything();
+    }
+
+    function drawEverything(){
+        ballX = ballX + 20;
+
+        console.log(ballX);
+        canvasContext.fillStyle = 'black';
+        canvasContext.fillRect(0,0,canvas.width, canvas.height);
+        canvasContext.fillStyle = 'white';
+        canvasContext.fillRect(225, 210, 200, 200);
+        canvasContext.fillStyle = 'red';
+        canvasContext.fillRect(ballX, 200, 50, 25);
+    }
+        
+</script>
 </html>
