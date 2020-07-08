@@ -12,6 +12,7 @@ Some text here
 
     var player1Score = 0;
     var player2Score = 0;
+    const WINNING_SCORE = 3;
 
     var paddle1Y = 250;
     var paddle2Y = 250;
@@ -47,6 +48,9 @@ Some text here
     }
 
     function ballReset(){
+        if(player1Score >= WINNING_SCORE || player2Score >= WINNING_SCORE){
+            
+        }
         ballSpeedX = -ballSpeedX;
         ballX = canvas.width/2;
         ballY = canvas.height/2;
@@ -74,8 +78,8 @@ Some text here
                 var deltaY = ballY - (paddle1Y+PADDLE_HEIGHT/2);
                 ballSpeedY = deltaY * 0.35;
             } else {
+                player2Score++; // must be BEFORE ballReset()
                 ballReset();
-                player2Score++;
             }
         }
 
@@ -86,8 +90,8 @@ Some text here
                 var deltaY = ballY - (paddle2Y+PADDLE_HEIGHT/2);
                 ballSpeedY = deltaY * 0.35;
             } else {
+                player1Score ++; // must be BEFORE ballReset()
                 ballReset();
-                player1Score ++;
             }
         }
 
