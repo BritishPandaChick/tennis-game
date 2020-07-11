@@ -28,7 +28,7 @@ function calculateMousePos(evt) {
 }
 
 function handleMouseClick(evt){
-    if(showingWinScree){
+    if(showingWinScreen){
         player1Score = 0;
         player2Score = 0;
         showingWinScreen = false;
